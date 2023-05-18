@@ -1,0 +1,68 @@
+<!-- <div>
+    <button (click)="addRoom()">Add Room</button>
+</div> -->
+<!-- {{room | json}} -->
+<!-- check if the form controls are all valid or not -->
+{{roomsForm.valid | json}}  
+{{roomsForm.invalid | json}}
+
+<!-- means fresh state of your form, no one has touched it yet -->
+{{roomsForm.pristine | json}}
+<!-- once you intercat with the form it becomes dirty -->
+{{roomsForm.dirty | json}}
+
+{{roomsForm.value | json}}
+
+ <!--pattern="[a-20-9._%+-]+@[a-z0-9.-]+\. [a-z]{2,3}$" -->
+
+<div *ngIf="successMessage!==''" class="alert alert-success">
+    {{successMessage}}
+</div>
+<form #roomsForm="ngForm" (ngSubmit)="AddRoom(roomsForm)">
+    <div class="formGroup">
+        <input required class="form-control" type="text" name="roomType"  placeholder="RoomType"
+        [(ngModel)]="room.roomType"
+        [ngModelOptions]="{updateOn:'blur'}"/>
+    </div>
+    <div class="formGroup">
+        <input #roomamenities="ngModel" 
+        minlength="5"
+        maxlength="20"
+        required class="form-control" type="text" name="amenities" placeholder="Amenities"
+        [(ngModel)]="room.amenities"/>
+    </div>
+    <div class="alert alert-danger" *ngIf="roomamenities.errors?.['minlength']">
+        Minimum length should be 5
+        <!-- {{roomamenities.errors | json}} -->
+    </div>
+    <div class="formGroup">
+        <input required class="form-control" type="number" name="Price" placeholder="Price per night"
+        [(ngModel)]="room.price"/>
+    </div>
+    <div class="formGroup">
+        <input required class="form-control" type="text" name="photos" placeholder="Photos (Link)"
+        [(ngModel)]="room.image"/>
+    </div>
+    <div class="formGroup">
+        <input required class="form-control" type="datetime" name="Checkin Time" placeholder="Checkin Time"
+        [(ngModel)]="room.checkinTime"/>
+    </div>
+    <div class="formGroup">
+        <input required class="form-control" type="datetime" name="Checkout Time" placeholder="Checkout Time"
+        [(ngModel)]="room.checkoutTime"/>
+    </div>
+    <div class="formGroup">
+        <input required 
+        #ratings="ngModel"
+        min="1"
+        max="5"
+        class="form-control" type="number" name="Rating" placeholder="Rating"
+        [(ngModel)]="room.rating"/>
+    </div>
+    <div class="alert alert-danger" *ngIf="ratings.dirty && ratings.errors?.['min'] || ratings.errors?.['max'] ">
+        Minimum rating should be 1 maximum 5
+    </div>
+    <div>
+        <button [disabled]="roomsForm.invalid" class="btn btn-primary" type=submit>Submit</button>
+    </div>
+</form>
