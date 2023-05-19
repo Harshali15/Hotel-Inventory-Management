@@ -27,6 +27,7 @@ import { HeaderModule } from './header/header.module';
 import { RouteConfigToken } from './services/routeConfig.service';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { GlobalErrorHandler } from './errorhandler.service';
+import {MatCardModule} from '@angular/material/card';
 
 function initFactory(initService:InitService){
   return () => initService.init();
@@ -58,7 +59,9 @@ function initFactory(initService:InitService){
     // RoomsModule,
     HeaderModule,
     AppRoutingModule,
-     MatSnackBarModule
+     MatSnackBarModule,
+     MatCardModule
+     
   ],
   providers: [
     {

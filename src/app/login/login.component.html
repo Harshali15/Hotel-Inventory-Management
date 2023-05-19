@@ -1,10 +1,51 @@
+<<<<<<< HEAD
+<mat-toolbar>
+    <span>Hotel Inventory Mangement App</span>
+</mat-toolbar>
+<div class="my-class">  
+  <mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <h1>Log In</h1>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form #loginForm="ngForm" (ngSubmit)="login()">
+        <!-- <h2>Log In</h2> -->
+        <mat-error *ngIf="!loginValid">
+            Invalid Username or Password 
+        </mat-error>
+        <mat-form-field>
+            <input matInput #emailcontrol="ngModel" appEmailvalidator type="email" name="name"
+            [(ngModel)]="email" placeholder="Enter Username" required>
+            <!-- <mat-error *ngIf="!loginValid">
+                 Username not recognized
+            </mat-error> -->
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" name="password" [(ngModel)]="password" placeholder="Enter Password" required>
+            <!-- <mat-error *ngIf="!loginValid">
+                Password incorrect
+           </mat-error> -->
+        </mat-form-field>
+=======
 <form>
     <div class="formGroup">
         <!-- <input color="steelblue" appHover type="email" name="name" [(ngModel)]="email" placeholder="Username"> -->
         <input #emailcontrol="ngModel" appEmailvalidator appHover="steelblue" type="email" name="name" [(ngModel)]="email" placeholder="Username">
+>>>>>>> parent of 1a9dab77 (changes)
         <div>
-             {{emailcontrol.errors | json}}
+            <button mat-raised-button style="background-color:#375f74; color:white; 
+            margin-top:20px; width:300px; height:45px; font-size: medium;">
+            Login
+            </button>
         </div>
+<<<<<<< HEAD
+      </form>
+    </mat-card-content>
+</mat-card>
+</div>
+=======
     </div>
     <div class="formGroup">
         <input appHover="lightgreen" type="password" name="password"  [(ngModel)]="password" placeholder="Password">
@@ -13,3 +54,4 @@
         <button class="btn btn-primary" (click)=login()>Login</button>
     </div>
 </form>
+>>>>>>> parent of 1a9dab77 (changes)

@@ -16,7 +16,7 @@ export class EmailvalidatorDirective  implements Validator{
 
   validate(control: AbstractControl<any, any>): ValidationErrors | null {
     const value = control.value;
-    if(value.includes('test')){
+    if(!value.includes('@') || !value.includes('.') || value.includes(' ')){
       return{
         invalidEmail: true
       }
