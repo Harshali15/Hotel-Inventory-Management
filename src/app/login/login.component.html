@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <mat-toolbar>
     <span>Hotel Inventory Mangement App</span>
 </mat-toolbar>
@@ -11,7 +10,6 @@
     </mat-card-header>
     <mat-card-content>
       <form #loginForm="ngForm" (ngSubmit)="login()">
-        <!-- <h2>Log In</h2> -->
         <mat-error *ngIf="!loginValid">
             Invalid Username or Password 
         </mat-error>
@@ -28,30 +26,13 @@
                 Password incorrect
            </mat-error> -->
         </mat-form-field>
-=======
-<form>
-    <div class="formGroup">
-        <!-- <input color="steelblue" appHover type="email" name="name" [(ngModel)]="email" placeholder="Username"> -->
-        <input #emailcontrol="ngModel" appEmailvalidator appHover="steelblue" type="email" name="name" [(ngModel)]="email" placeholder="Username">
->>>>>>> parent of 1a9dab77 (changes)
         <div>
             <button mat-raised-button style="background-color:#375f74; color:white; 
             margin-top:20px; width:300px; height:45px; font-size: medium;">
             Login
             </button>
         </div>
-<<<<<<< HEAD
       </form>
     </mat-card-content>
 </mat-card>
 </div>
-=======
-    </div>
-    <div class="formGroup">
-        <input appHover="lightgreen" type="password" name="password"  [(ngModel)]="password" placeholder="Password">
-    </div>
-    <div class="formGroup">
-        <button class="btn btn-primary" (click)=login()>Login</button>
-    </div>
-</form>
->>>>>>> parent of 1a9dab77 (changes)

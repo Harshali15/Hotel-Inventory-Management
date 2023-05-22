@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { RoomsRoutingModule } from './rooms-routing.module';
 import { RoomsComponent } from './rooms.component';
 import { RoomsListComponent } from './rooms-list/rooms-list.component';
@@ -10,7 +9,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderModule } from '../header/header.module';
 import { RouteConfigToken } from '../services/routeConfig.service';
 import { FilterPipe } from './filter.pipe';
-
+import { AppNavigationComponent } from '../app-navigation/app-navigation.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -19,14 +23,21 @@ import { FilterPipe } from './filter.pipe';
     RoomsBookingComponent,
     RoomsAddComponent,
     FilterPipe,
-    
+    AppNavigationComponent
   ],
   imports: [
     CommonModule,
     RoomsRoutingModule,
     FormsModule,
     HeaderModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatListModule,
+    MatButtonModule,
+    
+
   ],
   providers: [
     {

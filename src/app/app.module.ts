@@ -38,7 +38,7 @@ function initFactory(initService:InitService){
     AppComponent,
     ContainerComponent,
     EmployeeComponent,
-    AppNavigationComponent,
+    //AppNavigationComponent,
     NotfoundComponent,
     LoginComponent,
     HoverDirective,
@@ -52,15 +52,15 @@ function initFactory(initService:InitService){
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
+    //MatSidenavModule,
+    //MatIconModule,
+    //MatListModule,
     FormsModule,
     // RoomsModule,
     HeaderModule,
     AppRoutingModule,
-     MatSnackBarModule,
-     MatCardModule
+    MatSnackBarModule,
+    MatCardModule
      
   ],
   providers: [

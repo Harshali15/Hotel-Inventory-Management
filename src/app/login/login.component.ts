@@ -21,12 +21,8 @@ export class LoginComponent {
       //this.route.navigateByUrl('/rooms/add')
      // alert("Login Successful")
     }
-<<<<<<< HEAD
-    else{
+       else{
       this.loginValid = false;
       //alert("Login Failed. Please check your username and password")
-    }
-=======
->>>>>>> parent of 1a9dab77 (changes)
-  }
+    }  }
 }
