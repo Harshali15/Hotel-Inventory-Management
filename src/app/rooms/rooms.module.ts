@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { AppNavigationModule } from '../app-navigation/app-navigation.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
     RoomsBookingComponent,
     RoomsAddComponent,
     FilterPipe,
-    AppNavigationComponent
+    //AppNavigationComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +37,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatListModule,
     MatButtonModule,
-    
+    AppNavigationModule
 
   ],
   providers: [
