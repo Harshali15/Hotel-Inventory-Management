@@ -1,120 +1,48 @@
-<!-- binding syntax 1- interpolation , uses {{}} to access the variable-->
 <!-- <h1>Welcome to {{hotelName}}</h1> -->
-<div>
-    <button (click)="addRoom()">Add Room</button>
-</div>
+<div><app-app-navigation></app-app-navigation></div>
 
-<!-- <app-header></app-header> -->
-<!-- <app-header></app-header>
-<app-header></app-header> -->
-
-<!-- now you can see json data on your ui -->
-<!-- {{rooms$ | async |json}}  -->
-
-<!-- <p>Located in Heart of Downtown LA!</p> -->
-
-<!-- binding syntax2- property binding, uses [propertyName] to access the variable -->
-<!-- Number of rooms :
-<div [innerText]="numRooms">Number of rooms</div> -->
-
-<!-- binding syntax3- event binding, uses (eventName) to access the variable -->
-
-
-<!-- <div [hidden]="hiddenRoom">
-    Number of rooms :
-    <div [ngStyle]="numRooms>0 ? {'color':'green'} : {'color':'red'}"
-    [innerText]="numRooms">Number of rooms</div>
-</div> -->
-
-<button (click)="toggle()">Toggle</button>
-<button (click)="editRoom()">Edit Room</button>
-<button (click)="deleteRoom()">Delete Room</button>
-<!-- 
-{{priceFilter  | json}}
-<div>
-    <input type="number" class="form-control" placeholder="Price" [formControl]="priceFilter">
-</div> -->
-
-<!-- <h1> -->
-    <!-- {{getError$ | async}} -->
-    <!-- {{roomsCount$ | async}} rooms available -->
-<!-- </h1> -->
-<!-- ngif instead of hidden as hidden will still render the element in the DOM and it may cause performace issues -->
-<div *ngIf="hiddenRoom">
-    <div *ngIf="rooms$ | async as rooms">
-        <!-- Rooms list : [101,102,110,120,...] -->
-        <app-rooms-list [rooms]="rooms" (selectedRoom)="selectRoom($event)"></app-rooms-list>
-
-        <!-- {{roomList}}    displays as object so we use ngfor -->
-    </div>
-</div>
-
-<!-- null collison and optional chainng operator -->
-<!-- {{rooms.onholdRooms ?? 'No rooms on hold'}} -->
-<!-- 
-<div *ngIf = "rooms.onholdRooms">
-    Hold list : [11,12,10,120,...]
-</div>
-
-<h1>{{totalBytes}} Bytes loaded</h1> -->
-
-<router-outlet></router-outlet>
-
-<!-- {{roomList | json}} -->
-<!-- <div>
-    <table class="table">
-        <tr>
-            <th>Index</th>
-            <th>Even/Odd</th>
-            <th>Room Number</th>
-            <th>Room Type</th>
-            <th>price</th>
-            <th>Amenities</th>
-            <th>Checkin</th>
-            <th>Checkout</th>
-            <th>Rating</th>
-        </tr>
-        <tr 
-        [ngClass]="e ? 'even':'odd'"
-        *ngFor="let room of roomList | slice: 0:3; let o = odd; let e = even; let i = index">
-            <td>{{i | percent}}</td>  
-            <td>{{o ? 'Even' : 'Odd'}}</td>
-            <td>{{room.roomNumber}}</td>
-            <td>{{room.roomType | uppercase}}</td>
-            <td>{{room.price | currency : 'INR'}}</td>
-            <td>{{room.ammenities | titlecase}}</td>
-            <td>{{room.checkinTime }}</td>
-            <td>{{room.checkoutTime | date : 'short'}}</td>
-            <td>{{room.rating | number : '1.1-3' : 'en-us'}}</td>
-        </tr>
-    </table>
-</div> -->
-<div *ngIf="selectedRoom">
-    <h3>Selected Room Details</h3>
+<div class="content-class">
     <div>
-        <table class="table">
-            <tr>
-                <th>Room Number</th>
-                <th>Room Type</th>
-                <th>price</th>
-                <th>Amenities</th>
-                <th>Checkin</th>
-                <th>Checkout</th>
-                <th>Rating</th>a
-            </tr>
-            <tr>
-                <td>{{selectedRoom.roomNumber}}</td>
-                <td>{{selectedRoom.roomType | uppercase}}</td>
-                <td>{{selectedRoom.price | currency : 'INR'}}</td>
-                <td>{{selectedRoom.amenities | titlecase}}</td>
-                <td>{{selectedRoom.checkinTime }}</td>
-                <td>{{selectedRoom.checkoutTime | date : 'short'}}</td>
-                <td>{{selectedRoom.rating | number : '1.1-3' : 'en-us'}}</td>
-            </tr>
-        </table>
+        <button (click)="addRoom()">Add Room</button>
+    </div>
+
+    <button (click)="toggle()">Toggle</button>
+    <button (click)="editRoom()">Edit Room</button>
+    <button (click)="deleteRoom()">Delete Room</button>
+
+    <div *ngIf="hiddenRoom">
+        <div *ngIf="rooms$ | async as rooms">
+            <app-rooms-list [rooms]="rooms" (selectedRoom)="selectRoom($event)"></app-rooms-list>
+        </div>
+    </div>
+
+    <router-outlet></router-outlet>
+
+    <div *ngIf="selectedRoom">
+        <h3>Selected Room Details</h3>
+        <div>
+            <table class="table">
+                <tr>
+                    <th>Room Number</th>
+                    <th>Room Type</th>
+                    <th>price</th>
+                    <th>Amenities</th>
+                    <th>Checkin</th>
+                    <th>Checkout</th>
+                    <th>Rating</th>a
+                </tr>
+                <tr>
+                    <td>{{selectedRoom.roomNumber}}</td>
+                    <td>{{selectedRoom.roomType | uppercase}}</td>
+                    <td>{{selectedRoom.price | currency : 'INR'}}</td>
+                    <td>{{selectedRoom.amenities | titlecase}}</td>
+                    <td>{{selectedRoom.checkinTime }}</td>
+                    <td>{{selectedRoom.checkoutTime | date : 'short'}}</td>
+                    <td>{{selectedRoom.rating | number : '1.1-3' : 'en-us'}}</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 
 <!-- <app-rooms-list [rooms]="roomList" (selectedRoom)="selectRoom($event)"></app-rooms-list> -->
-
-
